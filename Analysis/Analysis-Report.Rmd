@@ -2,7 +2,7 @@
 title: 'Predicting Brexit Referendum Based On Polls: One Day Before Vote'
 author: "Abhinav Dholepat"
 date: "27/07/2020"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -16,14 +16,15 @@ library(dslabs)
 library(ggplot2) 
 library(dplyr)
 library(tidyverse)
+```
 
-
+```{r}
 data("brexit_polls")
 ```
 
 ## Basic Graphs To Understand Data 
 
-```{r Graph:Raw Remain and Leave}
+```{r}
 brexit_polls %>% 
   ggplot(aes(x = enddate)) + 
   geom_line(aes(y = remain), color = "Blue") + 
@@ -32,14 +33,14 @@ brexit_polls %>%
   ylab("Blue is Remain, Red is Leave")
 ```
 
-```{r Graph:Raw Spread}
+```{r}
 brexit_polls %>% 
   ggplot(aes(enddate, spread)) + 
   geom_line(color = "Orange") + 
   xlab("Time Poll Published") + 
   ylab("Spread") 
 ```
-```{r Graph:95% Confidence Interval Of Spread}
+```{r}
 brexit_polls <- brexit_polls %>% 
   mutate(p = ((spread + 1) / 2)) %>% 
   mutate(se = sqrt((p * (1 - p)) / samplesize)) %>% 
@@ -83,7 +84,7 @@ final_data <- data %>%
   filter(enddate <= "2016-06-22")
 ```
 
-```{r Graph:95% Confidence Interval Of True Spread}
+```{r}
 final_data %>% 
   ggplot(aes(enddate)) + 
   geom_line(aes(y = true_lower), color = "Blue") + 

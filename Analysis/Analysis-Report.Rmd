@@ -2,7 +2,7 @@
 title: 'Predicting Brexit Referendum Based On Polls: One Day Before Vote'
 author: "Abhinav Dholepat"
 date: "27/07/2020"
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

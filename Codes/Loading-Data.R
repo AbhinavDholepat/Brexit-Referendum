@@ -8,4 +8,4 @@ library(tidyverse)
 data("brexit_polls")
 view(brexit_polls) 
 
-
+save(brexit_polls, file = "Data/brexit_polls_data.rda") 

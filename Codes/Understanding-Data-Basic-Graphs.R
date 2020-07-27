@@ -28,7 +28,7 @@ ggsave("Visuals/Spread-Graph.png")
 brexit_polls <- brexit_polls %>% 
   mutate(p = ((spread + 1) / 2)) %>% 
   mutate(se = sqrt((p * (1 - p)) / samplesize)) %>% 
-  mutate(lower = (p - (2 * se)), upper = (p + (2 * se))) 
+  mutate(lower = (spread - (2 * se)), upper = (spread + (2 * se))) 
 
 ### Graphing The 95% CI ### 
 

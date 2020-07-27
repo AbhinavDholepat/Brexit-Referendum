@@ -35,4 +35,3 @@ final_data %>%
   ylab("95% Confidence Interval Of Spread") 
 
 ggsave("Visuals/Confidence-Interval-True-Spread.png") 
-
